@@ -11,7 +11,6 @@ from traceback import format_exc
 from cloudscraper import create_scraper
 from colorama import init, Fore
 from console.utils import set_title
-from easygui import fileopenbox
 from requests import Session, exceptions
 from yaml import safe_load
 
@@ -832,7 +831,7 @@ class Main:
             try:
                 print(f"{cyan}Please Import Your Combo List...")
                 sleep(0.3)
-                loader = open(fileopenbox(title="Load Combo List", default="*.txt"), 'r', encoding="utf8",
+                loader = open(combo.txt, 'r', encoding="utf8",
                               errors='ignore').read().split('\n')
                 if OxygenX.combo_dup:
                     self.accounts = list(set(x.strip() for x in loader if x != ''))
@@ -857,7 +856,7 @@ class Main:
                     if not OxygenX.Proxy.API.use:
                         print(f"\n{cyan}Please Import Your Proxies List.....")
                         sleep(0.3)
-                        loader = open(fileopenbox(title="Load Proxies List", default="*.txt"), 'r', encoding="utf8",
+                        loader = open(proxies.txt, 'r', encoding="utf8",
                                       errors='ignore').read().split('\n')
                     elif OxygenX.Proxy.API.use:
                         try:
