@@ -10,7 +10,6 @@ from traceback import format_exc
 
 from cloudscraper import create_scraper
 from colorama import init, Fore
-from console.utils import set_title
 from requests import Session, exceptions
 from yaml import safe_load
 
@@ -1064,7 +1063,6 @@ if __name__ == '__main__':
     charz = ['@', '!', '#', '$', '%', '^', '&', '*', ')', '(', '-', '}', '{', ']', '"', '+', '=', '?', '/',
              '.', '>', ',', '<', '`', '\'', '~', '[', '\\', ' ']
     version = '0.8'
-    set_title(f'OxygenX-{version} | by ShadowOxygen')
     t = f'''{cyan}________                                     ____  ___
 \_____  \ ___  ______.__. ____   ____   ____ \   \/  /
  /   |   \\\  \/  <   |  |/ ___\_/ __ \ /    \ \     /
