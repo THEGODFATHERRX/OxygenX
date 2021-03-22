@@ -830,7 +830,7 @@ class Main:
             try:
                 print(f"{cyan}Please Import Your Combo List...")
                 sleep(0.3)
-                loader = open(combo.txt, 'r', encoding="utf8",
+                loader = open('combo.txt', 'r', encoding="utf8",
                               errors='ignore').read().split('\n')
                 if OxygenX.combo_dup:
                     self.accounts = list(set(x.strip() for x in loader if x != ''))
@@ -855,7 +855,7 @@ class Main:
                     if not OxygenX.Proxy.API.use:
                         print(f"\n{cyan}Please Import Your Proxies List.....")
                         sleep(0.3)
-                        loader = open(proxies.txt, 'r', encoding="utf8",
+                        loader = open('proxies.txt', 'r', encoding="utf8",
                                       errors='ignore').read().split('\n')
                     elif OxygenX.Proxy.API.use:
                         try:
