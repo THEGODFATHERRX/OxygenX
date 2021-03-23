@@ -568,7 +568,7 @@ class Main:
             if OxygenX.debug:
                 self.prints(f'{red}[Error Check] {format_exc(limit=1)}')
             return False
-
+    '''
     def title(self):
         while self.stop_time:
             if not self.unmigrated:
@@ -598,7 +598,7 @@ class Main:
                     f'{"" if not OxygenX.Proxy.proxy else f" - Proxies: {len(self.proxylist)}"}'
                     f' | CPM: {Counter.cpm}'
                     f' | {self.now_time()} Elapsed | Unmigrated Checker')
-
+    '''
     def prints(self, line):
         lock.acquire()
         print(f'{blue}{self.now_time()} {line}')
@@ -830,8 +830,9 @@ class Main:
             try:
                 print(f"{cyan}Please Import Your Combo List...")
                 sleep(0.3)
-                loader = open('combo.txt', 'r', encoding="utf8",
-                              errors='ignore').read().split('\n')
+                print(1)
+                loader = open('/content/OxygenX/combo.txt', 'r', encoding="utf8",errors='ignore').read().split('\n')
+                print(2)
                 if OxygenX.combo_dup:
                     self.accounts = list(set(x.strip() for x in loader if x != ''))
                 else:
@@ -855,8 +856,7 @@ class Main:
                     if not OxygenX.Proxy.API.use:
                         print(f"\n{cyan}Please Import Your Proxies List.....")
                         sleep(0.3)
-                        loader = open('proxies.txt', 'r', encoding="utf8",
-                                      errors='ignore').read().split('\n')
+                        loader = open('/content/OxygenX/proxies.txt', 'r', encoding="utf8", errors='ignore').read().split('\n')
                     elif OxygenX.Proxy.API.use:
                         try:
                             idk = False
@@ -934,7 +934,7 @@ class Main:
         print(t)
         print(self.announcement)
         self.start_time = time()
-        Thread(target=self.title).start()
+        #Thread(target=self.title).start()
         mainpool.imap_unordered(func=self.prep, iterable=self.accounts)
         mainpool.close()
         mainpool.join()
