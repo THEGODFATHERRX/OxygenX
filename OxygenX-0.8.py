@@ -830,9 +830,7 @@ class Main:
             try:
                 print(f"{cyan}Please Import Your Combo List...")
                 sleep(0.3)
-                print(1)
                 loader = open('/content/OxygenX/combo.txt', 'r', encoding="utf8",errors='ignore').read().split('\n')
-                print(2)
                 if OxygenX.combo_dup:
                     self.accounts = list(set(x.strip() for x in loader if x != ''))
                 else:
