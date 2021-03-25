@@ -193,17 +193,18 @@ class Main:
                         else:
                             Counter.checked += 1
                             Counter.bad += 1
-                            self.prints(f'{red}[Badline] {blue}- {red}{line}')
-                            self.writing([line, 'Badline'])
+                            #self.prints(f'{red}[Badline] {blue}- {red}{line}')
+                            #self.writing([line, 'Badline'])
                             return
                         reply = self.checkname(email)
                         if not reply:
                             Counter.checked += 1
                             Counter.bad += 1
-                            if OxygenX.print_bad:
-                                self.prints(f'{red}[Bad] {blue}- {red}{line}')
-                            if OxygenX.save_bad:
-                                self.writing([line, 'Bad'])
+                            #if OxygenX.print_bad:
+                            #self.prints(f'{red}[Bad] {blue}- {red}{line}')
+                            #if OxygenX.save_bad:
+                            #continue
+                            #self.writing([line, 'Bad'])
                             return
                         else:
                             Counter.legacy_name += 1
@@ -213,10 +214,13 @@ class Main:
                 Counter.checked += 1
                 if 'Invalid credentials' in answer:
                     Counter.bad += 1
-                    if OxygenX.print_bad:
-                        self.prints(f'{red}[Bad] {blue}- {red}{line}')
-                    if OxygenX.save_bad:
-                        self.writing([line, 'Bad'])
+                    #print('a')
+                    if Counter.bad%100 == 0:
+                      print("Bad")
+                    #if OxygenX.print_bad:
+                    #self.prints(f'{red}[Bad] {blue}- {red}{line}')
+                    #if OxygenX.save_bad:
+                    #self.writing([line, 'Bad'])
                     return
                 texta = answer.text
                 if '[]' in texta:
