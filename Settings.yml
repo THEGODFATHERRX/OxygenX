@@ -84,7 +84,7 @@ OxygenX:
     # If remove bad proxies are on, once the proxy list hits the limit it will stop removing bad proxies
     proxy_remove_limit: 2000
     # If proxies be used for checking sfas (Will be slower but if false, you may get ip banned)
-    proxy_for_sfa: false
+    proxy_for_sfa: true
     # Sleep between checks if proxy mode is false (put 0 for no sleep) counted in secouds
     sleep_proxyless: 30
     
