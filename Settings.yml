@@ -22,7 +22,7 @@ OxygenX:
   timeout: 6000
 
   # Threads for account checking
-  threads: 200
+  threads: 99999999
   
   # Remove all duplicates in combolist
   combo_duplicates: true
